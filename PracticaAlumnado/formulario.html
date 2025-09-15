@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="formulario.css">
+    <title>Formulario de Registro</title>
 </head>
 <body>
-    
+
+<form action="#" method="POST">
+    <h2>Registro de Estudiante</h2>
+
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="apellidos">Apellidos</label>
+    <input type="text" id="apellidos" name="apellidos" required>
+
+    <label for="fecha_nacimiento">Fecha de nacimiento</label>
+    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+    <label for="curso">Curso en el que está matriculado</label>
+    <select id="curso" name="curso" required>
+        <option value="">Selecciona tu curso</option>
+        <option value="1">1º ESO</option>
+        <option value="2">2º ESO</option>
+        <option value="3">3º ESO</option>
+        <option value="4">4º ESO</option>
+    </select>
+
+    <label for="email">Email de Educamos</label>
+    <input type="email" id="email" name="email" placeholder="nombre@educamos.com" required>
+
+    <label for="password">Contraseña de Educamos</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Registrar</button>
+</form>
+
 </body>
 </html>
