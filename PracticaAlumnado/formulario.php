@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="#" method="POST">
+<form action="registro.php" method="POST">
     <h2>Registro de Estudiante</h2>
 
     <label for="nombre">Nombre</label>
@@ -29,14 +29,30 @@
         <option value="4">4º ESO</option>
     </select>
 
-    <label for="email">Email de Educamos</label>
-    <input type="email" id="email" name="email" placeholder="nombre@educamos.com" required>
+    <label for="correo">Email de Educamos</label>
+    <input type="email" id="correo" name="correo" required>
 
-    <label for="password">Contraseña de Educamos</label>
-    <input type="password" id="password" name="password" required>
+    <label for="contraseña">Contraseña de Educamos</label>
+    <input type="contraseña" id="contraseña" name="contraseña" required>
 
     <button type="submit">Registrar</button>
 </form>
+<?php
+    $query = "SELECT nombre, apellidos, fecha_nacimiento, curso, correo, contraseña FROM alumnado;
+    $result = mysqli_query($conexion, $query);
 
+    if ($result && mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($row['ID_prestamo']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['titulo']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['fecha_prestamo']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['fecha_limite']) . "</td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='4'>No hay préstamos registrados.</td></tr>";
+    }
+?>
 </body>
 </html>
