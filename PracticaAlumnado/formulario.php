@@ -42,6 +42,8 @@
 </div>
 
 <div class="contenedor">
+
+    <!-- //FORMATO TABLA -->
 <?php
     include 'conexiones.php';
     $query = "SELECT nombre, apellidos, curso FROM alumnado";
@@ -69,6 +71,28 @@
         echo "<p>No hay alumnos registrados.</p>";
     }
 ?>
+
+<!-- //FORMATO LISTA -->
+<!-- <?php
+    include 'conexiones.php';
+    $query = "SELECT nombre, apellidos, curso FROM alumnado";
+    $result = mysqli_query($conexion, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        echo "<h2>Listado de Alumnos Registrados</h2>";
+        echo "<ul>";
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<li>";
+            echo htmlspecialchars($row['nombre']) . " " . htmlspecialchars($row['apellidos']) . " - " . htmlspecialchars($row['curso']);
+            echo "</li>";
+        }
+
+        echo "</ul>";
+    } else {
+        echo "<p>No hay alumnos registrados.</p>";
+    }
+?> -->
 </div>
 
 </body>
