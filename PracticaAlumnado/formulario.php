@@ -77,7 +77,7 @@
     include 'conexiones.php';
     $query = "SELECT nombre, apellidos, curso FROM alumnado";
     $result = mysqli_query($conexion, $query);
-
+ 
     if ($result && mysqli_num_rows($result) > 0) {
         echo "<h2>Listado de Alumnos Registrados</h2>";
         echo "<ul>";
