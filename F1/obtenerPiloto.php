@@ -32,7 +32,7 @@ $pilotos = [
 
 echo "<table border='1' cellpadding='8' cellspacing='0' style='border-collapse: collapse; text-align: center;'>";
 echo "<tr style='background-color: #ddd;'>
-        <th>Número</th>
+        <th>Numero</th>
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Equipo</th>
