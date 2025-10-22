@@ -9,7 +9,6 @@ function obtenerPiloto($numeroPiloto) {
     $respuesta = curl_exec($curl);
 
     if ($respuesta === false) {
-        // echo "Error curl: " . curl_error($curl) .;
         curl_close($curl);
         return null;
     }
