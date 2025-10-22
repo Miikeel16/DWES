@@ -6,34 +6,28 @@ public class FAcademy extends Monoplaza{
         parent::__construct($nombre, $nacionalidad, $numero, $escuderia, $puntos);
         $this->potenciaMaxima = $potenciaMaxima;
     }
+    public function posicionValida(int $num){
+        if($pos < 18 || $pos > 1){
+            return true;
+        }
+        return false;
     public function otorgarPuntos(int $pos, boolean $rapida){
-        if($pos > 18 || $pos < 1){
-            echo "Posicion no valida";
-        }else{
-            switch ($pos):
-                case 1:
-                    $puntos = $puntos + 18;
-                case 2:
-                    $puntos = $puntos + 15;
-                case 3:
-                    $puntos = $puntos + 12;
-                case 4:
-                    $puntos = $puntos + 10;
-                case 5:
-                    $puntos = $puntos + 8;
-                case 6:
-                    $puntos = $puntos + 6;
-                case 7:
-                    $puntos = $puntos + 4;
-                case 8:
-                    $puntos = $puntos + 2;
-                case 9:
-                    $puntos = $puntos + 1;
-                case >10:
-                    $puntos = $puntos + 0;
-        }   
-        if($pos >= 10){
-            $puntos = $puntos + 1;
+        int $puntos =[18,15,12,10,8,6,4,2,1];
+            if(posicionValida){
+                for(int $i=0; $i < $puntos.length; i++){
+                    if($pos == $i){
+                        $puntos += $puntos[$i];
+                    }
+                }
+            }
+        }
+        if($rapida){
+            $puntos += 1;
+        }
+    }
+    public function subirCategoria($patrocinador) {
+        if (!$this->tieneSuperlicencia) {
+            return new F4($this->nombrePiloto, $this->nacionalidad, $this->numero, $this->escuderia, $this->puntos, $patrocinador);
         }
     }
 }

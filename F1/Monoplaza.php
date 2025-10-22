@@ -14,6 +14,7 @@ abstract class Monoplaza {
         $this->puntos = $puntos;
 }
     abstract public static function otorgarPuntos():
-   
+    abstract public static function posicionValida():
+    abstract public static function subir categoria():
 }
 ?>
