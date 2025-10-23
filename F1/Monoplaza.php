@@ -13,8 +13,7 @@ abstract class Monoplaza {
         $this->escuderia = $escuderia;
         $this->puntos = $puntos;
 }
-    abstract public static function otorgarPuntos():
-    abstract public static function posicionValida():
-    abstract public static function subir categoria():
+    abstract public static function otorgarPuntos():void
+    abstract public static function posicionValida():bool
 }
 ?>
