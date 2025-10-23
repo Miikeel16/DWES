@@ -1,6 +1,6 @@
 <?php
 public class F3 extends Monoplaza{
-    public String nombreAcademia;
+    public String $nombreAcademia;
 
     public function __construct(string $nombre, string $nacionalidad, int $numero, string $escuderia, int $puntos, int $nombreAcademia) {    
         parent::__construct($nombre, $nacionalidad, $numero, $escuderia, $puntos);

@@ -1,6 +1,6 @@
 <?php
 public class FAcademy extends Monoplaza{
-    public int potenciaMaxima;
+    public int $potenciaMaxima;
 
     public function __construct(string $nombre, string $nacionalidad, int $numero, string $escuderia, int $puntos, int $potenciaMaxima) {    
         parent::__construct($nombre, $nacionalidad, $numero, $escuderia, $puntos);

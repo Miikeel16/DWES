@@ -1,6 +1,6 @@
 <?php
 public class F1 extends Monoplaza{
-    public String patrocinadorPrincipal;
+    public String $patrocinadorPrincipal;
 
     public function __construct(string $nombre, string $nacionalidad, int $numero, string $escuderia, int $puntos, int $patrocinadorPrincipal) {    
         parent::__construct($nombre, $nacionalidad, $numero, $escuderia, $puntos);
