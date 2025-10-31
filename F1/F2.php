@@ -1,20 +1,20 @@
 <?php
-public class F2 extends Monoplaza{
-    public int $puntosSuperlicencia;
+class F2 extends Monoplaza{
+    public $puntosSuperlicencia;
 
-    public function __construct(string $nombre, string $nacionalidad, int $numero, string $escuderia, int $puntos, int $puntosSuperlicencia) {    
+    function __construct($nombre, $nacionalidad, $numero,  $escuderia, $puntos, $puntosSuperlicencia) {    
         parent::__construct($nombre, $nacionalidad, $numero, $escuderia, $puntos);
         $this->puntosSuperlicencia = $puntosSuperlicencia;
     }
-    public function posicionValida(int $num){
+    function posicionValida($num){
         if($pos < 24 || $pos > 1){
             return true;
         }
         return false;
-    public function otorgarPuntos(int $pos, boolean $rapida){
-        int $puntos =[10,8,7,6,5,4,3,2,1];
+    function otorgarPuntos($pos, $rapida){
+        $puntos =[10,8,7,6,5,4,3,2,1];
             if(posicionValida){
-                for(int $i=0; $i < $puntos.length; i++){
+                for($i=0; $i < $puntos.length; $i++){
                     if($pos == $i){
                         $puntos += $puntos[$i];
                     }
@@ -25,7 +25,7 @@ public class F2 extends Monoplaza{
             $puntos += 1;
         }
     }
-    public function subirCategoria($patrocinador) {
+    function subirCategoria($patrocinador) {
         if (!$this->tieneSuperlicencia) {
             return new F1($this->nombrePiloto, $this->nacionalidad, $this->numero, $this->escuderia, $this->puntos, $patrocinador);
         }

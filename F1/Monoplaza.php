@@ -1,12 +1,12 @@
 <?php
 abstract class Monoplaza {
-    public string $nombre;
-    public string $nacionalidad;
-    public int $numero;
-    public string $escuderia;
-    public int $puntos;
+    protected $nombre;
+    protected $nacionalidad;
+    protected $numero;
+    protected $escuderia;
+    protected $puntos;
 
-    public function __construct(string $nombre, string $nacionalidad, int $numero, string $escuderia, int $puntos) {
+    function __construct($nombre, $nacionalidad, $numero, $escuderia, $puntos) {
         $this->nombre = $nombre;
         $this->nacionalidad = $nacionalidad;
         $this->numero = $numero;
