@@ -1,30 +1,23 @@
 <?php
-class F3 extends Monoplaza{
+require_once('Monoplaza.php');
+require_once('F2.php');
+
+class F3 extends Monoplaza {
     public $nombreAcademia;
 
-    function __construct($nombre, $nacionalidad, $numero, $escuderia, $puntos,  $nombreAcademia) {    
+    public function __construct($nombre, $nacionalidad, $numero, $escuderia, $puntos, $nombreAcademia) {
         parent::__construct($nombre, $nacionalidad, $numero, $escuderia, $puntos);
         $this->nombreAcademia = $nombreAcademia;
     }
-    function posicionValida($num){
-        if($pos < 30 || $pos > 1){
-            return true;
-        }
-        return false;
-    function otorgarPuntos($pos, $rapida){
-        int $puntos =[10,9,8,7,6,5,4,3,2,1];
-            if(posicionValida){
-                for(int $i=0; $i < $puntos.length; $i++){
-                    if($pos == $i){
-                        $puntos += $puntos[$i];
-                    }
-                }
-            }
-        }
+
+    public function posicionValida($num): bool {
+        return $num >= 1 && $num <= 30;
     }
-    function subirCategoria($patrocinador) {
-        if (!$this->tieneSuperlicencia) {
-            return new F2($this->nombrePiloto, $this->nacionalidad, $this->numero, $this->escuderia, $this->puntos, $patrocinador);
+
+    public function otorgarPuntos($pos): void {
+        $tablaPuntos = [10,9,8,7,6,5,4,3,2,1];
+        if ($this->posicionValida($pos) && $pos <= count($tablaPuntos)) {
+            $this->puntos += $tablaPuntos[$pos - 1];
         }
     }
 }

@@ -1,28 +1,26 @@
 <?php
-class F1 extends Monoplaza{
-    public $patrocinadorPrincipal;
+require_once('Monoplaza.php');
 
-    function __construct($nombre, $nacionalidad, $numero, $escuderia, $puntos, $patrocinadorPrincipal) {    
+class F1 extends Monoplaza {
+    public $patrocinadorPrincipal;
+    public $vueltaRapida = false;
+
+    public function __construct($nombre, $nacionalidad, $numero, $escuderia, $puntos, $patrocinadorPrincipal) {
         parent::__construct($nombre, $nacionalidad, $numero, $escuderia, $puntos);
         $this->patrocinadorPrincipal = $patrocinadorPrincipal;
     }
-    function posicionValida($num){
-        if($pos < 30 || $pos > 1){
-            return true;
+
+    public function posicionValida($num): bool {
+        return $num >= 1 && $num <= 30;
+    }
+
+    public function otorgarPuntos($pos): void {
+        $tablaPuntos = [25,18,15,12,10,8,6,4,2,1];
+        if ($this->posicionValida($pos) && $pos <= count($tablaPuntos)) {
+            $this->puntos += $tablaPuntos[$pos - 1];
         }
-        return false;
-    function otorgarPuntos($pos, $rapida){
-        $puntos =[25,18,15,12,10,8,6,4,2,1];
-            if(posicionValida){
-                for($i=0; $i < $puntos.length; $i++){
-                    if($pos == $i){
-                        $puntos += $puntos[$i];
-                    }
-                }
-            }
-        }
-        if($rapida){
-            $puntos += 1;
+        if ($this->vueltaRapida) {
+            $this->puntos += 1;
         }
     }
 }
