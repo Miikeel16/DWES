@@ -14,7 +14,7 @@ abstract class Monoplaza {
         $this->puntos = $puntos;
     }
 
-    abstract public function otorgarPuntos($pos): void;
+    abstract public function otorgarPuntos($pos, $vueltaRapida): void;
     abstract public function posicionValida($num): bool;
 }
 ?>

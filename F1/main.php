@@ -11,11 +11,11 @@ $f3 = new F3("Piloto F3", "Italia", 3, "F3 Team", 0, "Academia XYZ");
 $f2 = new F2("Piloto F2", "Alemania", 4, "F2 Team", 0, 50);
 $f1 = new F1("Fernando Alonso", "España", 14, "Aston Martin", 0, "Aramco");
 
-$academy->otorgarPuntos(1);
-$f4->otorgarPuntos(2);
-$f3->otorgarPuntos(3);
-$f2->otorgarPuntos(4);
-$f1->otorgarPuntos(5);
+$academy->otorgarPuntos(1, FALSE);
+$f4->otorgarPuntos(2, TRUE);
+$f3->otorgarPuntos(3, FALSE);
+$f2->otorgarPuntos(4, FALSE);
+$f1->otorgarPuntos(5, TRUE);
 
 echo $academy->nombre . " - Puntos: " . $academy->puntos . "\n";
 echo $f4->nombre . " - Puntos: " . $f4->puntos . "\n";
