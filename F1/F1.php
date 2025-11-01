@@ -3,14 +3,13 @@ require_once('Monoplaza.php');
 
 class F1 extends Monoplaza {
     public $patrocinadorPrincipal;
-    public $vueltaRapida = false;
 
     public function __construct($nombre, $nacionalidad, $numero, $escuderia, $puntos, $patrocinadorPrincipal) {
         parent::__construct($nombre, $nacionalidad, $numero, $escuderia, $puntos);
         $this->patrocinadorPrincipal = $patrocinadorPrincipal;
     }
 
-    public function posicionValida($num): bool {
+    public function posicionValida($num, $vueltaRapida): bool {
         return $num >= 1 && $num <= 30;
     }
 
@@ -19,7 +18,7 @@ class F1 extends Monoplaza {
         if ($this->posicionValida($pos) && $pos <= count($tablaPuntos)) {
             $this->puntos += $tablaPuntos[$pos - 1];
         }
-        if ($this->vueltaRapida) {
+        if ($vueltaRapida) {
             $this->puntos += 1;
         }
     }

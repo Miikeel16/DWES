@@ -4,7 +4,6 @@ require_once('F1.php');
 
 class F2 extends Monoplaza {
     public $puntosSuperlicencia;
-    public $vueltaRapida = false;
 
     public function __construct($nombre, $nacionalidad, $numero, $escuderia, $puntos, $puntosSuperlicencia) {
         parent::__construct($nombre, $nacionalidad, $numero, $escuderia, $puntos);
@@ -15,12 +14,12 @@ class F2 extends Monoplaza {
         return $num >= 1 && $num <= 24;
     }
 
-    public function otorgarPuntos($pos): void {
+    public function otorgarPuntos($pos, $vueltaRapida): void {
         $tablaPuntos = [10,8,7,6,5,4,3,2,1];
         if ($this->posicionValida($pos) && $pos <= count($tablaPuntos)) {
             $this->puntos += $tablaPuntos[$pos - 1];
         }
-        if ($this->vueltaRapida) {
+        if ($vueltaRapida) {
             $this->puntos += 1;
         }
     }

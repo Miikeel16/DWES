@@ -14,7 +14,7 @@ class F4 extends Monoplaza {
         return $num >= 1 && $num <= 30;
     }
 
-    public function otorgarPuntos($pos): void {
+    public function otorgarPuntos($pos, $vueltaRapida): void {
         $tablaPuntos = [25,18,15,12,10,8,6,4,2,1];
         if ($this->posicionValida($pos) && $pos <= count($tablaPuntos)) {
             $this->puntos += $tablaPuntos[$pos - 1];

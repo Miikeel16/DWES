@@ -4,7 +4,6 @@ require_once('F4.php');
 
 class FAcademy extends Monoplaza {
     public $potenciaMaxima;
-    public $vueltaRapida = false;
 
     public function __construct($nombre, $nacionalidad, $numero, $escuderia, $puntos, $potenciaMaxima) {
         parent::__construct($nombre, $nacionalidad, $numero, $escuderia, $puntos);
@@ -15,12 +14,12 @@ class FAcademy extends Monoplaza {
         return $num >= 1 && $num <= 18;
     }
 
-    public function otorgarPuntos($pos): void {
+    public function otorgarPuntos($pos, $vueltaRapida): void {
         $tablaPuntos = [18,15,12,10,8,6,4,2,1];
         if ($this->posicionValida($pos) && $pos <= count($tablaPuntos)) {
             $this->puntos += $tablaPuntos[$pos - 1];
         }
-        if ($this->vueltaRapida) {
+        if ($vueltaRapida) {
             $this->puntos += 1;
         }
     }
