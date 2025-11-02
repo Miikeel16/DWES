@@ -20,5 +20,15 @@ class F4 extends Monoplaza {
             $this->puntos += $tablaPuntos[$pos - 1];
         }
     }
+    public function subirCategoria($nombreAcademia): F3 {
+        return new F3(
+            $this->nombre,
+            $this->nacionalidad,
+            $this->numero,
+            $this->escuderia,
+            $this->puntos,
+            $nombreAcademia
+        );
+    }
 }
 ?>

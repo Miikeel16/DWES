@@ -22,5 +22,6 @@ class F1 extends Monoplaza {
             $this->puntos += 1;
         }
     }
+    
 }
 ?>

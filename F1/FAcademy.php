@@ -23,5 +23,15 @@ class FAcademy extends Monoplaza {
             $this->puntos += 1;
         }
     }
+    public function subirCategoria($pais): F4 {
+        return new F4(
+            $this->nombre,
+            $this->nacionalidad,
+            $this->numero,
+            $this->escuderia,
+            $this->puntos,
+            $pais
+        );
+    }
 }
 ?>

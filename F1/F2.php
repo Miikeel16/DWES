@@ -23,5 +23,15 @@ class F2 extends Monoplaza {
             $this->puntos += 1;
         }
     }
+    public function subirCategoria($patrocinadorPrincipal): F1 {
+        return new F1(
+            $this->nombre,
+            $this->nacionalidad,
+            $this->numero,
+            $this->escuderia,
+            $this->puntos,
+            $patrocinadorPrincipal
+        );
+    }
 }
 ?>

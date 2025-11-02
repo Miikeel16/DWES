@@ -22,4 +22,8 @@ echo $f4->nombre . " - Puntos: " . $f4->puntos . "\n";
 echo $f3->nombre . " - Puntos: " . $f3->puntos . "\n";
 echo $f2->nombre . " - Puntos: " . $f2->puntos . "\n";
 echo $f1->nombre . " - Puntos: " . $f1->puntos . "\n";
+
+$f1_f2 = $f2->subirCategoria("Red Bull");
+
+echo $f1_f2->nombre . " - Puntos: " . $f1_f2->puntos . " - Patrocinador: " . $f1_f2->patrocinadorPrincipal;
 ?>
