@@ -1,3 +1,4 @@
 public class Jugador {
-    protected nombreJugador
+    protected $nombreJugador;
+    protected $nacionalidad;
 }
