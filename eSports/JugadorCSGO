@@ -1,0 +1,10 @@
+<?php
+    class JugadorCSGO extends Jugador{
+        private $precision;
+
+        public function __construct($nombreJugador, $nacionalidad, $nombreEquipo, $torneosGanados, $puntosRanking, $categoria, $JugadorLol){
+            parent::constructor($nombreJugador, $nacionalidad, $nombreEquipo, $torneosGanados, $puntosRanking);
+                $this->JugadorLol=$JugadorLol;
+        }
+    }
+?>
